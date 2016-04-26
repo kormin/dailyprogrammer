@@ -1,4 +1,13 @@
 <?php
+/*
+ * Author: https://github.com/kormin
+ * Date Created: April 26, 2016
+ * Description: This is the answer to the programming challenge #1 found in
+ * https://www.reddit.com/r/dailyprogrammer/
+ * Challenge: [easy] challenge #1
+ * Problem URL:
+ * https://www.reddit.com/r/dailyprogrammer/comments/pih8x/easy_challenge_1/
+ */
 ?>
 <!DOCTYPE html>
 <html>
