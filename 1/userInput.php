@@ -8,6 +8,8 @@
  * Problem URL:
  * https://www.reddit.com/r/dailyprogrammer/comments/pih8x/easy_challenge_1/
  */
+require_once('../../assets/index.php');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,28 +19,52 @@
 		<meta name="description" content="programming challenge taken from /r/dailyprogrammer subreddit">
 		<meta name="keywords" content="php,html5,forms,inputs">
 		<link rel="author" href="https://github.com/kormin">
-		<!-- <link rel=canonical href=""> -->
+		<link href="<?=TWBS; ?>" rel="stylesheet" type="text/css">
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-			Enter name: <input type="text" name="name"> <br> <br>
-			Enter age: <input type="number" name="age" min="0" max="300"> <br> <br>
-			Enter reddit username: <input type="text" name="usrname"> <br> <br>
-			<input type="submit" value="Submit">
-		</form>
-		<br>
-		<h2>
-			<?php
-				if(!empty($_POST)) {
-					$name = $_POST['name'];
-					$age = $_POST['age'];
-					$usrname = $_POST['usrname'];
-					echo "your name is ".$name.", you are ".$age." years old, and your username is ".$usrname;
-				}
-			?>
-		</h2>
+		<div class="container">
+			<div class="row">
+				<form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+					<div class="row form-group">
+						<label for="name" class="control-label col-sm-4">Enter name: </label>
+						<div class="col-sm-8">
+							<input type="text" id="name" class="form-control" name="name">
+						</div>
+					</div>
+					<div class="row form-group">
+						<label for="age" class="control-label col-sm-4">Enter age: </label>
+						<div class="col-sm-8">
+							<input type="number" id="age" class="form-control" name="age" min="0" max="300">
+						</div>
+					</div>
+					<div class="row form-group">
+						<label for="usrname" class="control-label col-sm-4">Enter reddit username: </label>
+						<div class="col-sm-8">
+							<input type="text" id="usrname" class="form-control" name="usrname">
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<input type="submit" id="submit" class="btn btn-default" name="submit" value="Submit">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<h2 class="text-center">
+					<?php
+						if(!empty($_POST)) {
+							$name = $_POST['name'];
+							$age = $_POST['age'];
+							$usrname = $_POST['usrname'];
+							echo "Your name is ".$name.". You are ".$age." years old. Your username is ".$usrname.".";
+						}
+					?>
+				</h2>
+			</div>
+		</div>
 	</body>
 </html>
