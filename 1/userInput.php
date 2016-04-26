@@ -24,7 +24,7 @@ require_once('../../assets/index.php');
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body>
+	<body class="container">
 		<div class="container">
 			<div class="row">
 				<form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
@@ -54,16 +54,14 @@ require_once('../../assets/index.php');
 				</form>
 			</div>
 			<div class="row">
-				<h2 class="text-center">
-					<?php
-						if(!empty($_POST)) {
-							$name = $_POST['name'];
-							$age = $_POST['age'];
-							$usrname = $_POST['usrname'];
-							echo "Your name is ".$name.". You are ".$age." years old. Your username is ".$usrname.".";
-						}
-					?>
-				</h2>
+				<?php
+					if(!empty($_POST)) :
+						$name = $_POST['name'];
+						$age = $_POST['age'];
+						$usrname = $_POST['usrname'];
+				?>
+				<h2 class="text-center"><?="Your name is ".$name.". You are ".$age." years old. Your username is ".$usrname.".";?></h2>
+				<?php endif; ?>
 			</div>
 		</div>
 	</body>
