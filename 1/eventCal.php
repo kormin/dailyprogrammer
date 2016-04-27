@@ -1,4 +1,12 @@
 <?php
+/*
+ * Author: https://github.com/kormin
+ * Date Created: April 26, 2016
+ * Description: This is the answer to the programming challenge #1 found in
+ * https://www.reddit.com/r/dailyprogrammer/
+ * Challenge: [intermediate] challenge #1
+ * 
+ */
 ?>
 <!DOCTYPE html>
 <html lang="en">
