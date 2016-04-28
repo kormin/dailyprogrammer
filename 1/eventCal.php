@@ -29,7 +29,26 @@ require_once('../../assets/index.php');
 		<link href="<?=TWBS; ?>" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		
+		<div class="container">
+			<div class="row">
+				<form class="form-horizontal" method="get">
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-default">
+							<input type="radio" name="options" value="add" id="add" autocomplete="off"> Add Event
+						</label>
+						<label class="btn btn-default">
+							<input type="radio" name="options" value="view" id="view" autocomplete="off"> View Events
+						</label>
+						<label class="btn btn-default">
+							<input type="radio" name="options" value="edit" id="edit" autocomplete="off"> Edit Event
+						</label>
+						<label class="btn btn-default">
+							<input type="radio" name="options" value="delete" id="delete" autocomplete="off"> Delete Event
+						</label>
+					</div>
+				</form>
+			</div>
+		</div>
 		<script type="text/javascript">
 			
 		</script>
