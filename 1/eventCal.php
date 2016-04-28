@@ -12,6 +12,7 @@
  * http://code.tutsplus.com/tutorials/php-database-access-are-you-doing-it-correctly--net-25338
  * 
  */
+require_once('../../assets/index.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,12 @@
 		<meta name="description" content="programming challenge taken from /r/dailyprogrammer subreddit">
 		<meta name="keywords" content="php,html5,forms,inputs">
 		<link rel="author" href="https://github.com/kormin">
+		<link href="<?=TWBS; ?>" rel="stylesheet" type="text/css">
 	</head>
 	<body>
+		
+		<script type="text/javascript">
+			
+		</script>
 	</body>
 </html>
