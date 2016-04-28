@@ -5,6 +5,11 @@
  * Description: This is the answer to the programming challenge #1 found in
  * https://www.reddit.com/r/dailyprogrammer/
  * Challenge: [intermediate] challenge #1
+ * Problem URL:
+ * https://www.reddit.com/r/dailyprogrammer/comments/pihtx/intermediate_challenge_1/
+ * Resources: 
+ * http://code.tutsplus.com/tutorials/why-you-should-be-using-phps-pdo-for-database-access--net-12059
+ * http://code.tutsplus.com/tutorials/php-database-access-are-you-doing-it-correctly--net-25338
  * 
  */
 ?>
