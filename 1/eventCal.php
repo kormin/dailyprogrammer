@@ -88,8 +88,20 @@ require_once('../../assets/index.php');
 				</form>
 			</div>
 		</div>
+		<?php 
+			print_r($_GET);
+		?>
 		<script type="text/javascript">
-			
+			// variables
+			var btnTxt = ['add','view','edit','delete'];
+			var inpTxt = ['month','day','year','event'];
+			var evnTxt = ['#edit-event','#view-event'];
+			var len = btnTxt.length;
+			var btnJq = [], inpJq = [], trow = [];
+			var edit = $('#edit-event');
+			var view = $('#view-event');
+			var submt = $('#submit');
+			var post_id = $('#post_id');
 		</script>
 	</body>
 </html>
