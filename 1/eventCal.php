@@ -59,6 +59,13 @@ require_once('../../assets/index.php');
 							<div class="col-sm-4">
 								<select class="form-control" id="month" name="month">
 									<option selected disabled hidden>Month</option>
+									<?php
+										$month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+										foreach ($month as $i => $val) :
+											$tp = $i + 1;
+									?>
+									<option value='<?php echo $tp; ?>'><?php echo $val; ?></option>;
+										<?php endforeach; ?>
 								</select>
 							</div>
 							<div class="col-sm-2 col-md-2">
@@ -73,6 +80,9 @@ require_once('../../assets/index.php');
 							<div class="col-sm-10">
 								<textarea type="text" class="form-control" id="event" rows="3" name="event"></textarea>
 							</div>
+						</div>
+						<div class="form-group col-sm-2" style="float: right;">
+							<button type="submit" id="submit" class="btn bnt-default btn-block" name="submit" value="submit">Submit</button>
 						</div>
 					</div>
 				</form>
