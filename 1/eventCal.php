@@ -32,6 +32,12 @@ require_once('../../assets/index.php');
 		<div class="container">
 			<div class="row">
 				<form class="form-horizontal" method="get">
+					<div class="form-group">
+						<button type="button" class="btn btn-default" id="add" name="options" value="add" >Add Event</button>
+						<button type="button" class="btn btn-default" id="view" name="options" value="view">View Events</button>
+						<button type="button" class="btn btn-default" id="edit" name="options" value="edit" >Edit Event</button>
+						<button type="button" class="btn btn-default" id="delete" name="options" value="delete" >Delete Event</button>
+					<!-- 
 					<div class="btn-group" data-toggle="buttons">
 						<label class="btn btn-default">
 							<input type="radio" name="options" value="add" id="add" autocomplete="off"> Add Event
@@ -44,7 +50,7 @@ require_once('../../assets/index.php');
 						</label>
 						<label class="btn btn-default">
 							<input type="radio" name="options" value="delete" id="delete" autocomplete="off"> Delete Event
-						</label>
+						</label> -->
 					</div>
 				</form>
 			</div>
