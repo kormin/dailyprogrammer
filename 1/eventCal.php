@@ -52,6 +52,29 @@ require_once('../../assets/index.php');
 							<input type="radio" name="options" value="delete" id="delete" autocomplete="off"> Delete Event
 						</label> -->
 					</div>
+					<div id="edit-event" class="">
+						<div class="form-group">
+							<input type="number" min="0" id="post_id" name="post_id" hidden></input>
+							<label for="month" class="col-sm-2 control-label" >Enter date: </label>
+							<div class="col-sm-4">
+								<select class="form-control" id="month" name="month">
+									<option selected disabled hidden>Month</option>
+								</select>
+							</div>
+							<div class="col-sm-2 col-md-2">
+								<input type="number" min="1" max="31" class="form-control" placeholder="Date" id="day" name="day">
+							</div>
+							<div class="col-sm-4 col-md-4">
+								<input type="number" min="0" class="form-control" placeholder="Year" id="year" name="year">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="event" class="col-sm-2 control-label">Enter event: </label>
+							<div class="col-sm-10">
+								<textarea type="text" class="form-control" id="event" rows="3" name="event"></textarea>
+							</div>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
