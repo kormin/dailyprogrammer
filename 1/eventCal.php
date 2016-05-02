@@ -91,6 +91,10 @@ require_once('../../assets/index.php');
 		<?php 
 			print_r($_GET);
 		?>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="<?=JQRY; ?>" type="text/javascript"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<!-- <script src="<?=TWBS_JS; ?>"></script> -->
 		<script type="text/javascript">
 			// variables
 			var btnTxt = ['add','view','edit','delete'];
@@ -102,6 +106,46 @@ require_once('../../assets/index.php');
 			var view = $('#view-event');
 			var submt = $('#submit');
 			var post_id = $('#post_id');
+			function main() {
+				for(var i=0;i<len;i++) {
+					btnJq[i] = $('#'+btnTxt[i]);
+					inpJq[i] = $('#'+inpTxt[i]);
+					btnJq[i].click( { p1: btnJq[i] }, disPrp );
+				}
+				for(var i=0; i < xd.length ; i++) {
+					var txt = 'trow-'+xd[i];
+					trow[i] = $('#'+txt);
+					trow[i].click( { p1: xd[i] }, getTbCell);
+					// trow[i].each(function(){
+					// 	alert($(this).html());
+					// });
+				}
+			}
+			function getTbCell(e) { // gets data by id for display
+				var row = document.getElementById(this.id);
+				var arr = [];
+				for (var i = 1, l = row.cells.length; i < l; i++) { // i is 1 to drop the # column
+					arr[i-1] = row.cells[i].innerHTML;
+					if(i-1 == 0) {
+						arr[i-1] = monthConv(arr[i-1]);
+					}
+					inpJq[i-1].val(arr[i-1]);
+				}
+				post_id.val(e.data.p1);
+				pckEvnt();
+			}
+			function pckEvnt() {
+				var prmp;
+				while(prmp!='e' && prmp!='d') {
+					prmp = prompt("Enter [e] for edit or [d] for delete: ");
+					prmp = prmp.toLowerCase();
+				}
+				if(prmp == 'e') {
+					btnJq[2].click();  // edit button is clicked
+				}else{
+					btnJq[3].click();  // delete button is clicked
+				}
+			}
 		</script>
 	</body>
 </html>
