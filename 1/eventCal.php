@@ -184,6 +184,23 @@ require_once('../../assets/index.php');
 					}
 				}
 			}
+			function sendPHP (val) {
+				$.ajax({
+					// type: "GET",
+					data: { val : val },
+					success: function( result ) {
+						// alert(val);
+					}
+				});
+			}
+			// function callPHP(phpFileLoc, fx, args) {
+			// 	jQuery.ajax(
+			// 		type: "POST",
+			// 		url: phpFileLoc,
+			// 		dataType: 'json',
+			// 		data: { action: fx, arguments: }
+			// 	);
+			// }
 		</script>
 	</body>
 </html>
