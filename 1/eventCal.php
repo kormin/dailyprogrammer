@@ -146,6 +146,44 @@ require_once('../../assets/index.php');
 					btnJq[3].click();  // delete button is clicked
 				}
 			}
+			function disPrp(e) { // displays prop
+				e.data.p1.prop('disabled', true);
+				submt.prop('value', this.id);
+				if(e.data.p1!=btnJq[1]) { // checks if button != view button
+					// edit.css('cssText', 'display: block !important;');
+					edit.removeClass('hide');
+					edit.addClass('show');
+					view.removeClass('show');
+					view.addClass('hide');
+				}else{ // displays #view-event if button click == #view
+					edit.removeClass('show');
+					edit.addClass('hide');
+					view.removeClass('hide');
+					view.addClass('show');
+				}
+				for(var i=0;i<len;i++) {
+					if (e.data.p1!=btnJq[i]) {
+						btnJq[i].prop('disabled', false);
+						btnJq[i].removeClass('btn-primary');
+					}else{
+						btnJq[i].addClass('btn-primary');
+					}
+					if(e.data.p1==btnJq[3]) { // checks if button == delete button
+						inpJq[i].prop('disabled', true);
+					}else{
+						inpJq[i].prop('disabled', false);
+					}
+				}
+			}
+			function monthConv(val) {
+				var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+				for(var i=0,len=month.length; i<len; i++) {
+					var res = month[i].localeCompare(val);
+					if(res == 0) {
+						return i+1;
+					}
+				}
+			}
 		</script>
 	</body>
 </html>
