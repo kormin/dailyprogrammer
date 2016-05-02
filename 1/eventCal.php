@@ -13,6 +13,31 @@
  * 
  */
 require_once('../../assets/index.php');
+
+function toStr($arr) {
+	foreach ($arr as $i => $v) {
+		
+	}
+}
+
+if(!empty($_GET)) {
+	$opt = $_GET['submit'];
+	$id = 0;
+	$val = '';
+	$cols = '';
+	$colVal = '';
+	$cond = '';
+	$len = count($_GET) - 3; // submit button must be last in array
+	// echo "$cols<br>$val";
+	if($opt == 'submit'){
+		echo "You cannot submit without choosing an option.";
+	}else if($opt == 'add') {
+	}else if($opt == 'edit') {
+	}else if($opt == 'delete') {
+	}else {
+		echo "Invalid action";
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,6 +131,8 @@ require_once('../../assets/index.php');
 			var view = $('#view-event');
 			var submt = $('#submit');
 			var post_id = $('#post_id');
+			var xd = <?php echo json_encode($xd) ?>; // get php array and store here
+			// window.onload = function () {alert('Jquery loaded');};
 			function main() {
 				for(var i=0;i<len;i++) {
 					btnJq[i] = $('#'+btnTxt[i]);
