@@ -75,6 +75,18 @@ class PdoDb
 			}
 		}
 	}
+	function createDb() {
+		// if( 1== 1049) {
+		// 	$tp = $this->dbInfo['dbname'];
+		// 	$this->dbInfo['dbname'] = null;
+		// 	$this->setDsn();
+		// 	$this->dbInfo['dbname'] = $tp;
+		// }
+		$str = 'CREATE DATABASE IF NOT EXISTS `'.$this->dbInfo['dbname'].'`;';
+		$this->dbh->exec($str);
+		// $sth = $this->dbh->prepare($str);
+		// $sth->execute();
+	}
 }
 
 function dbConf(){
