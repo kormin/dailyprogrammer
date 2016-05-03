@@ -12,7 +12,10 @@
  * http://code.tutsplus.com/tutorials/php-database-access-are-you-doing-it-correctly--net-25338
  * 
  */
-require_once('../../assets/index.php');
+require_once('editCal.php');
+
+
+$db = dbConf();
 
 function toStr($arr) {
 	foreach ($arr as $i => $v) {
