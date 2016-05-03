@@ -23,6 +23,11 @@ class PdoDb
 			$this->dbInfo[$key] = $value;
 		}
 	}
+	function setDsnNoDbname() {
+		if ($this->dbInfo['driver'] == 'mysql') {
+			$this->dsn = "mysql:host=".$this->dbInfo['host'].";charset=".$this->dbInfo['charset'];
+		}
+	}
 	function setDsn() {
 		if ($this->dbInfo['driver'] == 'mysql') {
 			$this->dsn = "mysql:host=".$this->dbInfo['host'].";dbname=".$this->dbInfo['dbname'].";charset=".$this->dbInfo['charset'];
@@ -36,6 +41,18 @@ class PdoDb
 	}
 	function setOpts($opts) {
 		$this->opts = $opts;
+	}
+	function getDsn() {
+		return $this->dsn;
+	}
+	function getUser() {
+		return $this->dbInfo['user'];
+	}
+	function getPass() {
+		return $this->dbInfo['pass'];
+	}
+	function getOpts() {
+		return $this->opts;
 	}
 }
 
