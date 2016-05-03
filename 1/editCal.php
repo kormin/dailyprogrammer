@@ -54,6 +54,27 @@ class PdoDb
 	function getOpts() {
 		return $this->opts;
 	}
+	function getPdo() {
+		try {
+			$dbh = new PDO($this->getDsn(), $this->getUser(), $this->getPass(), $this->getOpts());
+			return $dbh;
+		} catch (PDOException $e) {
+			if ($e->getCode() == 1049) {
+				return $e;
+			}else{
+				echo $e->getMessage();
+			}
+		}
+	}
+	function setConn() {
+		$this->dbh = $this->getPdo();
+		if ($this->dbh instanceof PDOException) {
+			if($this->dbh->getCode() == 1049) {
+				$this->setDsnNoDbname();
+				$this->dbh = $this->getPdo();
+			}
+		}
+	}
 }
 
 function dbConf(){
