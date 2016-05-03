@@ -18,6 +18,25 @@ class PdoDb
 		$this->setDsn();
 		$this->setOpts($opts);
 	}
+	function setDbInfo($dbInfo) {
+		foreach ($dbInfo as $key => $value) {
+			$this->dbInfo[$key] = $value;
+		}
+	}
+	function setDsn() {
+		if ($this->dbInfo['driver'] == 'mysql') {
+			$this->dsn = "mysql:host=".$this->dbInfo['host'].";dbname=".$this->dbInfo['dbname'].";charset=".$this->dbInfo['charset'];
+		}else if($this->dbInfo['driver'] == 'sqlite') {
+			$this->dsn = "sqlite:".$this->dbInfo['path']."/".$this->dbInfo['dbname'].".sqlite3";
+		}else if($this->dbInfo['driver'] == 'pgsql') {
+			$this->dsn = "pgsql:host=".$this->dbInfo['host'].";port=".$this->dbInfo['port'].";dbname=".$this->dbInfo['dbname'].";user=".$this->dbInfo['user'].";password=".$this->dbInfo['pass'].";";
+		}else{
+			echo "Your database driver is unavailable.";
+		}
+	}
+	function setOpts($opts) {
+		$this->opts = $opts;
+	}
 }
 
 function dbConf(){
