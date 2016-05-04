@@ -109,6 +109,19 @@ class PdoDb
 		$sth = $this->dbh->prepare($str);
 		$sth->execute();
 	}
+	function select($cols, $opt=null) {
+	/*
+		$str = "SELECT 
+			(`col1`, `col2`)
+			FROM
+			table
+			(:col1, :col2)
+		;";
+	*/
+		$str = 'SELECT '.$cols.' FROM `'.$this->dbInfo['table'].'` '.$opt.';';
+		$sth = $this->dbh->query($str);
+		return $sth;
+	}
 }
 
 function dbConf(){
