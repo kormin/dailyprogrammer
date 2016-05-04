@@ -75,6 +75,17 @@ class PdoDb
 			}
 		}
 	}
+	function execSql($loc) {
+		$sql = file_get_contents($loc);
+		if ($sql === false) {
+			echo "Sql file not found";
+		}
+		try {
+			$res = $this->dbh->exec($sql);
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
 	function createDb() {
 		// if( 1== 1049) {
 		// 	$tp = $this->dbInfo['dbname'];
@@ -86,6 +97,17 @@ class PdoDb
 		$this->dbh->exec($str);
 		// $sth = $this->dbh->prepare($str);
 		// $sth->execute();
+	}
+	function createTable($cols) {
+	/*
+		$str = "CREATE TABLE IF NOT EXISTS
+			`table`
+			(`col1`, `col2`)
+		;";
+	*/
+		$str = 'CREATE TABLE IF NOT EXISTS `'.$dbInfo['table'].'` ('.$cols.');';
+		$sth = $this->dbh->prepare($str);
+		$sth->execute();
 	}
 }
 
