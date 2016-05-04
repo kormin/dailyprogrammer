@@ -126,7 +126,9 @@ function dbConf(){
 		PDO::ATTR_EMULATE_PREPARES => false
 	];
 	$dbconn = new PdoDb($dbInfo, $opts);
-	$dbconn->createDb();
-	$dbconn->createTable('events','`id` INT AUTO_INCREMENT NOT NULL,`month` INT NOT NULL,`day` INT NOT NULL,`year` INT NOT NULL,`event` varchar(800) NOT NULL');
+	$dbconn->setConn();
+	$dbconn->execSql($sqlFile);
+	// $dbconn->createDb();
+	// $dbconn->createTable('events','`id` INT AUTO_INCREMENT NOT NULL,`month` INT NOT NULL,`day` INT NOT NULL,`year` INT NOT NULL,`event` varchar(800) NOT NULL');
 	return $dbconn;
 }
