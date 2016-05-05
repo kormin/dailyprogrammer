@@ -122,6 +122,27 @@ class PdoDb
 		$sth = $this->dbh->query($str);
 		return $sth;
 	}
+	function insert($cols, $val) {
+	/*
+		$sql = "
+			INSERT INTO 
+				table
+				(col1, col2)
+				VALUES
+				(:col1, :col2)
+		;";
+		$arr = array(
+			':col1' => $col1,
+			':col2' => $col2
+		);
+		$sth = $this->dbh->prepare($sql);
+		$sth->execute($arr);
+	*/
+		$str = 'INSERT INTO `'.$this->dbInfo['table'].'` ('.$cols.') '.'VALUE ('.$val.');';
+		// echo "<br>$str<br>";
+		$sth = $this->dbh->prepare($str);
+		$sth->execute();
+	}
 }
 
 function dbConf(){
