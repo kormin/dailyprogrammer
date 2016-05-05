@@ -149,6 +149,11 @@ class PdoDb
 		$sth = $this->dbh->prepare($str);
 		$sth->execute();
 	}
+	function delete($cond) {
+		$str = 'DELETE FROM `'.$this->dbInfo['table'].'` WHERE '.$cond.';';
+		$sth = $this->dbh->prepare($str);
+		$sth->execute();
+	}
 }
 
 function dbConf(){
