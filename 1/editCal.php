@@ -154,6 +154,11 @@ class PdoDb
 		$sth = $this->dbh->prepare($str);
 		$sth->execute();
 	}
+	function getSqlFile($file) {
+		$str = PATH.'/'.$file;
+		$sth = file_get_contents($str);
+		$this->dbh->exec($sth);
+	}
 }
 
 function dbConf(){
