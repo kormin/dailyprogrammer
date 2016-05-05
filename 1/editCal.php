@@ -143,6 +143,12 @@ class PdoDb
 		$sth = $this->dbh->prepare($str);
 		$sth->execute();
 	}
+	function update($colVal, $cond) {
+		$str = 'UPDATE `'.$this->dbInfo['table'].'` SET '.$colVal.' WHERE '.$cond.';';
+		// echo "<br>$str<br>";
+		$sth = $this->dbh->prepare($str);
+		$sth->execute();
+	}
 }
 
 function dbConf(){
