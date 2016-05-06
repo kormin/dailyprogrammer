@@ -194,3 +194,9 @@ function srch($dbconn) {
 	}
 	// print_r($arr);
 }
+
+function add($dbconn, $cols, $val) {
+	// INSERT INTO `events` (`month`,`day`,`year`,`event`) VALUE (1,2,2016,"hello world");
+	// $dbconn->insert('`month`,`day`,`year`,`event`','3,7,2016,"world"');
+	$dbconn->insert($cols, $val);
+}
