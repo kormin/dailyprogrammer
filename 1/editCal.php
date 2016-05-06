@@ -182,3 +182,15 @@ function dbConf(){
 	// $dbconn->createTable('events','`id` INT AUTO_INCREMENT NOT NULL,`month` INT NOT NULL,`day` INT NOT NULL,`year` INT NOT NULL,`event` varchar(800) NOT NULL');
 	return $dbconn;
 }
+
+function srch($dbconn) {
+	$sth = $dbconn->select('`id`,`month`,`day`,`year`,`event`');
+	$arr = $sth->fetchAll(PDO::FETCH_ASSOC);
+	return $arr;
+	foreach ($arr as $i => $val) {
+		foreach ($val as $i1 => $val2) {
+			echo "<p>$val2</p>";
+		}
+	}
+	// print_r($arr);
+}
