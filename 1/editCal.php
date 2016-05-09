@@ -1,9 +1,12 @@
 <?php
 /**
 * Database Connection Information Class
-* Author: Tom Abao
+* Author: https://github.com/kormin
 * Date Created: May 2, 2016
-* Good practice: http://php.net/manual/en/pdo.prepared-statements.php
+* Description: This is the answer to the programming challenge #1 found in
+* https://www.reddit.com/r/dailyprogrammer/
+* Challenge: [intermediate] challenge #1
+* Resources: http://php.net/manual/en/pdo.prepared-statements.php
 */
 require_once('../../assets/index.php');
 
