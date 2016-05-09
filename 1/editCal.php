@@ -203,17 +203,22 @@ function add($dbconn, $cols, $val) {
 
 function monthConv($val) {
 	$month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-	if ($opt == 'txt') { // converts month to text
-		foreach ($month as $i => $v) {
-			if ($i+1 == $val) {
-				return $v;
-			}
-		}
-	}elseif ($opt == 'num') { // converts month to num
-		foreach ($month as $i => $v) {
-			if($v == $val) {
-				return $i+1;
-			}
+	foreach ($month as $i => $v) {
+		if ($i+1 == $val) {
+			return $v;
 		}
 	}
+	// if ($opt == 'txt') { // converts month to text
+	// 	foreach ($month as $i => $v) {
+	// 		if ($i+1 == $val) {
+	// 			return $v;
+	// 		}
+	// 	}
+	// }elseif ($opt == 'num') { // converts month to num
+	// 	foreach ($month as $i => $v) {
+	// 		if($v == $val) {
+	// 			return $i+1;
+	// 		}
+	// 	}
+	// }
 }
