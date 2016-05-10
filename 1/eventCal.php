@@ -35,6 +35,22 @@ if(!empty($_GET)) {
 	if($opt == 'submit'){
 		echo "You cannot submit without choosing an option.";
 	}else if($opt == 'add') {
+		foreach ($_GET as $i => $v) { // get column names and values and store in string
+			if ($i != 'submit' && $i != 'post_id') {
+				if ($i == 'event') {
+					$val .= '"'.$v.'"';
+				}else{
+					$val .= $v;
+				}
+				$cols .= "`$i`";
+				if ($id < $len) {
+					$cols .= ",";
+					$val .= ",";
+				}
+				$id++;
+			}
+		}
+		add($db, $cols, $val);
 	}else if($opt == 'edit') {
 	}else if($opt == 'delete') {
 	}else {
