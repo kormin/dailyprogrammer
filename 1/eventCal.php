@@ -52,6 +52,26 @@ if(!empty($_GET)) {
 		}
 		add($db, $cols, $val);
 	}else if($opt == 'edit') {
+		foreach ($_GET as $i => $v) {
+			if ($i != 'submit' && $i != 'post_id') {
+				if ($i == 'event') {
+					$colVal .= "`$i` = '$v'";
+				}else{
+					$colVal .= "`$i` = $v";
+				}
+				if ($id < $len) {
+					$colVal .= ",";
+				}
+				$id++;
+			}
+		}
+		$cond = 'id = '.$_GET['post_id'];
+		try {
+			$db->update($colVal, $cond);
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+			echo "<br>Database error occurred. Cannot update the entry. Please try again.";
+		}
 	}else if($opt == 'delete') {
 	}else {
 		echo "Invalid action";
