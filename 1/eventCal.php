@@ -73,6 +73,13 @@ if(!empty($_GET)) {
 			echo "<br>Database error occurred. Cannot update the entry. Please try again.";
 		}
 	}else if($opt == 'delete') {
+		$cond = 'id = '.$_GET['post_id'];
+		try {
+			$db->delete($cond);
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+			echo "<br>Database error occurred. Cannot delete the entry. Please try again.";
+		}
 	}else {
 		echo "Invalid action";
 	}
