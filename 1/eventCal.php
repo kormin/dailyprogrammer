@@ -158,6 +158,40 @@ if(!empty($_GET)) {
 					</div>
 				</form>
 			</div>
+			<div id="view-event" class="hide row">
+				<h2>Events Calendar</h2>
+				<?php 
+					$srchArr = srch($db);
+					$i = 0;
+					$xd = array(); // array of id from db
+					print_r($srchArr);
+					
+				?>
+				<div class="row">
+				<div class="col-xs-12">
+					<div class="col-xs-1">
+						<?php echo ++$i; ?>
+					</div>
+					<?php foreach ($v1 as $i2 => $v2): if($i2 == 'month'): ?>
+					<div class="col-xs-2">
+						<?php echo monthConv($v2); ?>
+					</div>
+					<?php endif; if($i2 == 'day'): ?>
+					<div class="col-xs-1">
+						<?php echo $v2; ?>
+					</div>
+					<?php endif; if($i2 == 'year'): ?>
+					<div class="col-xs-2">
+						<?php echo $v2; ?>
+					</div>
+					<?php endif; if ($i2 == 'event'): ?>
+					<div class="col-xs-6">
+						<?php echo $v2; ?>
+					</div>
+					<?php endif; endforeach; ?>
+				</div>	
+				</div>
+			</div>
 		</div>
 		<?php 
 			print_r($_GET);
