@@ -12,6 +12,7 @@
  * http://code.tutsplus.com/tutorials/php-database-access-are-you-doing-it-correctly--net-25338
  * 
  */
+
 require_once('editCal.php');
 
 
@@ -98,6 +99,13 @@ if(!empty($_GET)) {
 		<meta name="keywords" content="php,html5,forms,inputs">
 		<link rel="author" href="https://github.com/kormin">
 		<link href="<?=TWBS; ?>" rel="stylesheet" type="text/css">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 	</head>
 	<body>
 		<div class="container">
@@ -246,6 +254,7 @@ if(!empty($_GET)) {
 			var post_id = $('#post_id');
 			var xd = <?php echo json_encode($xd) ?>; // get php array and store here
 			// window.onload = function () {alert('Jquery loaded');};
+			$(document).ready(main());
 			function main() {
 				for(var i=0;i<len;i++) {
 					btnJq[i] = $('#'+btnTxt[i]);
