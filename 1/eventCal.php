@@ -164,9 +164,42 @@ if(!empty($_GET)) {
 					$srchArr = srch($db);
 					$i = 0;
 					$xd = array(); // array of id from db
-					print_r($srchArr);
+					// print_r($srchArr);
 					
 				?>
+				<table class="table table-responsive table-striped table-hover" id="dbTable">
+					<thead class="thead-inverse">
+						<tr>
+							<th>#</th>
+							<th>Month</th>
+							<th>Day</th>
+							<th>Year</th>
+							<th>Event</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($srchArr as $i1 => $v1): ++$i; $fl=0;
+						foreach ($v1 as $i2 => $v2): 
+							if($i2 == 'id'): $xd[$i-1] = $v2; 
+
+						?>
+						<tr id="trow-<?php echo $v2; ?>" style="cursor: pointer;">
+							<?php endif; if ($fl==0): ?>
+							<th scope="row" class="cntr"><?php echo $i; ?></th>
+							<?php $fl=1; endif; if($i2 == 'month'): ?>
+							<td class="month"><?php echo monthConv($v2); ?></td>
+							<?php endif; if($i2 == 'day'): ?>
+							<td class="day"><?php echo $v2; ?></td>
+							<?php endif; if($i2 == 'year'): ?>
+							<td class="year"><?php echo $v2; ?></td>
+							<?php endif; if ($i2 == 'event'): ?>
+							<td class="event"><?php echo $v2; ?></a></td>
+							<?php endif; endforeach; ?>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				<!-- 
 				<div class="row">
 				<div class="col-xs-12">
 					<div class="col-xs-1">
@@ -190,7 +223,7 @@ if(!empty($_GET)) {
 					</div>
 					<?php endif; endforeach; ?>
 				</div>	
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<?php 
