@@ -53,5 +53,34 @@ require_once('../../assets/index.php');
 		<script src="<?=JQRY; ?>" type="text/javascript"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<!-- <script src="<?=TWBS_JS; ?>"></script> -->
+		<script type="text/javascript">
+			// variables
+			var btnId = ['timer','split','reset'];
+			var btn = [];
+			var btnLen = btnId.length;
+			var disp = $('#time');
+
+			var start, curr, diff, time=0, res, intr, id=0, x=0;
+			var laps = [];
+			// window.onload = function () {alert('Jquery loaded');};
+			$(document).ready(main());
+			function main() {
+				for(var i=0;i<btnLen;i++) {
+					btn[i] = $('#'+btnId[i]);
+					btn[i].click({p1:btnId[i]},setBtn);
+				}
+			}
+			function setBtn(e) {
+				switch(e.data.p1) {
+					case btnId[0]: timer($(this));
+						break;
+					case btnId[1]: lap();
+						break;
+					case btnId[2]: clr();
+						break;
+					default: break;
+				}
+			}
+		</script>
 	</body>
 </html>
