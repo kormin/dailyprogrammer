@@ -5,6 +5,12 @@
  * Description: This is the answer to the programming challenge #2 found in
  * https://www.reddit.com/r/dailyprogrammer/
  * Challenge: [difficult] challenge #2
+ * Problem URL:
+ * https://www.reddit.com/r/dailyprogrammer/comments/pjsdx/difficult_challenge_2/
+ * Resources: 
+ * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date
+ * https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Timers
+ * http://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript
  */
 
 require_once('../../assets/index.php');
