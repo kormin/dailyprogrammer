@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+td 
+{
+width: 150px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+var timer_id;
+
+$(document).ready(function() {
+$('#start').click(function() {
+    timer_id = setInterval('tick()', 10);
+});
+$('#stop').click(function() {
+    clearTimeout(timer_id);
+});
+
+$('#reset').click(function() {
+    $('#elapsed').text(' ');
+});
+$('#lap').click(function() {
+            $('<h4></h4>', {
+        text: 'Lap Time:'+$('#elapsed').text()
+    }).appendTo('#laps');
+});
+});
+
+function tick() {
+var t_td = $('#elapsed');
+var t = parseInt(t_td.text(), 10);
+if (isNaN(t)) {
+    t = '1 millisecond';
+} else {
+    t++;
+    t += ' milliseconds'
+}
+t_td.text(t);
+}
+</script>
+<title>Daily Programmer Difficult Challenge #2</title>
+</head>
+<body>
+
+<table><tr>
+   <td></td>
+   <td id="elapsed"></td>
+   <td id="start">Start</td>
+   <td id="stop">Stop</td>
+   <td id="lap">Lap</td>
+   <td id="reset">Reset</td>
+   </tr>
+</table>
+<div id="laps">
+
+</div>
+
+</body>
+</html>
