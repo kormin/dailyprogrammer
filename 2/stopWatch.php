@@ -91,6 +91,14 @@ require_once('../../assets/index.php');
 					clearInterval(intr); // clears delay set by timeout
 				}
 			}
+			function runTime() {
+				curr = Date.now();
+				diff = curr - start;
+				start = curr;
+				time += diff;
+				res = time / 1000;
+				disp.text(res.toString()+' sec');
+			}
 		</script>
 	</body>
 </html>
