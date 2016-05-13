@@ -99,6 +99,17 @@ require_once('../../assets/index.php');
 				res = time / 1000;
 				disp.text(res.toString()+' sec');
 			}
+			function clr() {
+				// start = curr = diff = 0; // will require stop
+				time = res = x = 0; // does not require stop
+				disp.text('00:00');
+			}
+			function lap() {
+				laps[id] = res.toString();
+				$('<h4></h4>', {
+				text: 'Lap #'+(++x)+': '+laps[id]+' sec'}).appendTo('#laps');
+				++id;
+			}
 		</script>
 	</body>
 </html>
