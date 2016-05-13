@@ -81,6 +81,16 @@ require_once('../../assets/index.php');
 					default: break;
 				}
 			}
+			function timer(e) {
+				if(e.text() == 'Start') { // start state is true
+					e.text('Stop');
+					start = Date.now(); // Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.
+					intr = setInterval(runTime, 1); // Calls a function repeatedly, with a fixed time delay between each call to that function.
+				}else{
+					e.text('Start');
+					clearInterval(intr); // clears delay set by timeout
+				}
+			}
 		</script>
 	</body>
 </html>
