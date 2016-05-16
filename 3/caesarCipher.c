@@ -1,6 +1,13 @@
 /*
  * Author: https://github.com/kormin
  * Date Created: May 10, 2016
+ * Description: This is the answer to the programming challenge #2 found in
+ * https://www.reddit.com/r/dailyprogrammer/
+ * Challenge: [easy] challenge #3
+ * Problem URL:
+ * https://www.reddit.com/r/dailyprogrammer/comments/pkw2m/2112012_challenge_3_easy/
+ * Resources:
+ * https://en.wikipedia.org/wiki/Caesar_cipher
  */
 
 #include<stdio.h>
