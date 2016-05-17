@@ -14,6 +14,19 @@
 #include<conio.h>
 #include<string.h>
 
+/*
+* Modulo function to handle negative numbers
+* http://stackoverflow.com/questions/4003232/how-to-code-a-modulo-operator-in-c-c-obj-c-that-handles-negative-numbers
+*/
+int mod (int a, int b) {
+   if(b < 0) //you can check for b == 0 separately and do what you want
+     return mod(-a, -b);
+   int ret = a % b;
+   if(ret < 0)
+     ret+=b;
+   return ret;
+}
+
 int main() {
     int n, i, i2, len;
     char x[50], x1[50];
