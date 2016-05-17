@@ -37,5 +37,20 @@ int main() {
     fflush(stdin);
     gets(x);
     len = strlen(x);
+    for(i=0,i2=0;i<len;i++) {
+        if(x[i]>=97 && x[i]<=122) { // make all caps
+            x[i] = x[i] - 32;
+        }
+        if(x[i]>=65 && x[i]<=90) { // accepts all caps chars only
+            x1[i2] = x[i] - 65;
+            en[i2] = mod(x1[i2]+n, 26);
+//            en[i2] = (x1[i2] + n) % 26; // encrypted string
+            de[i2] = mod(en[i2]-n, 26);
+//            de[i2] = (en[i2] - n) % 26; // decrypted string
+            en[i2] = en[i2] + 65;
+            de[i2] = de[i2] + 65;
+        }
+        ++i2;
+    }
     return 0;
 }
