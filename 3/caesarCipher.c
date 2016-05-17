@@ -55,5 +55,11 @@ int main() {
         }
         ++i2;
     }
+    en[i2] = '\0';
+    de[i2] = '\0';
+    printf("Encrypted: ");
+    puts(en);
+    printf("Decrypted: ");
+    puts(de);
     return 0;
 }
