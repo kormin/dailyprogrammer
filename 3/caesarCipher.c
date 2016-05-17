@@ -49,6 +49,9 @@ int main() {
 //            de[i2] = (en[i2] - n) % 26; // decrypted string
             en[i2] = en[i2] + 65;
             de[i2] = de[i2] + 65;
+        }else{ // ignore spaces, periods, etc...
+            en[i2] = x[i];
+            de[i2] = x[i];
         }
         ++i2;
     }
