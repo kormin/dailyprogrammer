@@ -27,6 +27,15 @@ int mod (int a, int b) {
    return ret;
 }
 
+void toUpper (char *s, int len) { // my fx which accepts str ptr and len making str uppercase
+    int i;
+    for(i=0;i<len;i++) {
+        if(*(s+i)>=97 && *(s+8)<=122) {
+            *(s+i) = *(s+i) - 32;
+        }
+    }
+}
+
 int main() {
     char alph[27] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','\0'};
     char alph1[27] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','\0'};
