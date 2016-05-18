@@ -1,6 +1,13 @@
 /*
  * Author: https://github.com/kormin
  * Date Created: May 10, 2016
+ * Description: This is the answer to the programming challenge #3 found in
+ * https://www.reddit.com/r/dailyprogrammer/
+ * Challenge: [intermediate] challenge #3
+ * Problem URL:
+ * https://www.reddit.com/r/dailyprogrammer/comments/pkwb1/2112012_challenge_3_intermediate/
+ * Resources:
+ * https://en.wikipedia.org/wiki/Substitution_cipher
  */
 
 #include<stdio.h>
