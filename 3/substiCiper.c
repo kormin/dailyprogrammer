@@ -87,5 +87,10 @@ int main() {
     alph[i] = '\0';
     cipher[i] = '\0';
     // Finish building cipher
+    printf("Enter your message: "); // request for msg
+    fflush(stdin); // clears input buffer
+    gets(msg);
+    int msgLen = strlen(msg);
+    toUpper(&msg[0], msgLen);
     return 0;
 }
