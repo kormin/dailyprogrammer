@@ -92,5 +92,23 @@ int main() {
     gets(msg);
     int msgLen = strlen(msg);
     toUpper(&msg[0], msgLen);
+    // Start encrypting msg using alph arr
+    // Start decrypting en using cipher arr
+    for(i=0, i2=0, i3=0;i<msgLen;i++) {
+        for(i1=0;i1<len1;i1++) {
+            if(msg[i]==alph1[i1]) { // encrypts msg using alph1
+                en[i2++] = cipher[i1];
+            }
+            if(en[i]==cipher[i1]) { // decrypts en using cipher
+                de[i3++] = alph1[i1];
+            }
+        }
+        if(!(msg[i]>=65 && msg[i]<=90)) { // code to ignore spaces, periods, etc...
+            en[i2++] = msg[i];
+        }
+        if(!(en[i]>=65 && en[i]<=90)) { // code to ignore spaces, periods, etc...
+            de[i3++] = en[i];
+        }
+    }
     return 0;
 }
