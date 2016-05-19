@@ -62,5 +62,30 @@ int main() {
             i2++;
         }
     }
+    char key1[len2-i2];
+    int len3 = len2-i2;
+    for(i=0,i1=0;i<len2;i++) { // removes duplicate letter and places in key1 array
+        if(key[i]!='*') {
+            key1[i1++]=key[i];
+        }
+    }
+    for(i=0;i<len3;i++) { // checks key1 against alphabet array and places key1 first in cipher arr removing key1 values from alph arr
+        for(i1=0;i1<len1;i1++) {
+            if(key1[i] == alph[i1]) {
+                alph[i1] = '*';
+                cipher[i] = key1[i];
+                break;
+            }
+        }
+    }
+    for(i=0,i1=0;i<len1;i++) { // adds alph values not in key1 arr to the end of cipher arr
+        if(alph[i]!='*') {
+            cipher[len3+i1] = alph[i];
+            i1++;
+        }
+    }
+    alph[i] = '\0';
+    cipher[i] = '\0';
+    // Finish building cipher
     return 0;
 }
