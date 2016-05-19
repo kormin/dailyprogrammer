@@ -110,5 +110,13 @@ int main() {
             de[i3++] = en[i];
         }
     }
+    en[i2]='\0';
+    de[i2]='\0';
+    // End encrypting msg using alph arr
+    // End decrypting en using cipher arr
+    printf("Encrypted message: ");
+    puts(en);
+    printf("Decrypted message: ");
+    puts(de);
     return 0;
 }
