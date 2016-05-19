@@ -48,5 +48,19 @@ int main() {
     len2 = strlen(key);
     char cipher[len1];
     int rept[len2];
+    // Start building cipher
+    toUpper(&key[0], len2);
+    for(i=0, i2=0;i<len2;i++) {
+        rept[i] = 0;
+        for(i1=0;i1<len2;i1++) { // checks for duplicates in key array
+            if(key[i] == key[i1]) {
+                rept[i]++;
+            }
+        }
+        if(rept[i]>1) { // check for repeat letters
+            key[i] = '*';
+            i2++;
+        }
+    }
     return 0;
 }
