@@ -55,6 +55,17 @@ require_once('../../assets/index.php');
 					<button type="submit" id="submit" class="btn bnt-default btn-block" name="submit" value="submit">Submit</button>
 				</div>
 			</form>
+			<div class="row" id="passList">
+				<?php 
+					if(!empty($_GET)): 
+						$num = $_GET['num'];
+						$leng = $_GET['leng'];
+					for ($i=0; $i < $num; $i++):  
+						$pass = randPass($leng);
+				?>
+				<h4 class="col-xs-6" id="pass-<?php echo $i; ?>"><?php echo htmlspecialchars($pass); ?></h4>
+				<?php endfor; endif; ?>
+			</div>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="<?=JQRY; ?>" type="text/javascript"></script>
