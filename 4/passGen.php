@@ -38,6 +38,23 @@ require_once('../../assets/index.php');
 	</head>
 	<body>
 		<div class="container">
+			<form class="form-horizontal" method="get">
+				<div class="row form-group">
+					<label for="num" class="control-label col-xs-5 col-md-3">Number of passwords: </label>
+					<div class="col-xs-7 col-md-9">
+						<input type="number" class="form-control" min="1" id="num" name="num">
+					</div>
+				</div>
+				<div class="row form-group">
+					<label for="leng" class="col-xs-5 col-md-3 control-label">Length of passwords: </label>
+					<div class="col-xs-7 col-md-9">
+						<input type="number" class="form-control" min="1" id="leng" name="leng"></input>
+					</div>
+				</div>
+				<div class="row form-group col-xs-2" style="float: right;">
+					<button type="submit" id="submit" class="btn bnt-default btn-block" name="submit" value="submit">Submit</button>
+				</div>
+			</form>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="<?=JQRY; ?>" type="text/javascript"></script>
