@@ -71,5 +71,36 @@ require_once('../../assets/index.php');
 		<script src="<?=JQRY; ?>" type="text/javascript"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<!-- <script src="<?=TWBS_JS; ?>"></script> -->
+		<script type="text/javascript">
+			var num = <?php echo $_GET['num']; ?>;;
+			// window.onload = function () {alert('Jquery loaded');};
+			$(document).ready(main());
+			function main() {
+				// $('#submit').click(function(){
+				// 	num = $('#num').val();
+				// });
+				for(var i=0;i<num;i++) {
+					$('#pass-'+i).click(function(){
+						$(this).selectText();
+					});
+				}
+			}
+
+			// http://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
+			jQuery.fn.selectText = function(){
+				var doc = document, element = this[0], range, selection;
+				if (doc.body.createTextRange) {
+					range = document.body.createTextRange();
+					range.moveToElementText(element);
+					range.select();
+				} else if (window.getSelection) {
+					selection = window.getSelection();        
+					range = document.createRange();
+					range.selectNodeContents(element);
+					selection.removeAllRanges();
+					selection.addRange(range);
+				}
+			};
+		</script>
 	</body>
 </html>
