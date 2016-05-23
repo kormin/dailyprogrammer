@@ -13,6 +13,21 @@
 
 require_once('../../assets/index.php');
 
+function randPass($leng) {
+	$asc = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"; // missing whitespace character
+	$pass = '';
+	$ascLen = strlen($asc);
+	for($i=0;$i<$leng;$i++) {
+		$rnd = rand(0, $ascLen-1);
+		$pass .= $asc[$rnd];
+		while(repeat($pass, $leng)) {
+			$rnd = rand(0, $ascLen-1);
+			$pass .= $asc[$rnd];
+		}
+		// echo $pass[$i].'<br>';
+	}
+	return $pass;
+}
 
 ?>
 <!DOCTYPE html>
