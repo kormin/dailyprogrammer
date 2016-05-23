@@ -29,6 +29,15 @@ function randPass($leng) {
 	return $pass;
 }
 
+function repeat($val, $len) {
+	for ($i=0; $i < $len; $i++) { 
+		for ($i1=0; $i1 < $len; $i1++) { 
+			if($val[$i] == $val[$i1]) return false;
+		}
+	}
+	return true;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
