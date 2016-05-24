@@ -1,6 +1,13 @@
 /*
  * Author: https://github.com/kormin
  * Date Created: May 11, 2016
+ * Description: This is the answer to the programming challenge #7 found in
+ * https://www.reddit.com/r/dailyprogrammer/
+ * Challenge: [easy] challenge #7
+ * Problem URL:
+ * https://www.reddit.com/r/dailyprogrammer/comments/pr2xr/2152012_challenge_7_easy/
+ * Resources:
+ * https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/International_Morse_Code.svg/450px-International_Morse_Code.svg.png
  */
 
 #include <iostream>
