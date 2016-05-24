@@ -29,5 +29,15 @@ int main() { // for [2] if 0 has space after, the space will not be displayed
     string msg, res;
     cout<<"Enter a choice: "<<endl<<"[1] Text to Morse code"<<endl<<"[2] Morse code to text"<<endl<<"Choice: ";
     cin>>c;
+    if(c==1 || c==2) {
+        msg = getInp();
+        len = msg.length();
+        if(c==1){
+            res = getMorse(msg, len);
+        }else{
+            res = getText(msg, len);
+        }
+        cout<<res;
+    }
     return 0;
 }
