@@ -24,6 +24,17 @@ const string spc2 = " / "; // space between words is 7 units;
 int len1 = txt.length();
 int len2 = spc2.length();
 
+string getInp () {
+    string str;
+    cout<<"Enter your message: ";
+    cin.sync(); // clears input buffer
+    getline(cin, str); // gets string input from user
+    for(int i=0;i<str.length();i++) {
+        str[i]=toupper(str[i]);
+    }
+    return str;
+}
+
 int main() { // for [2] if 0 has space after, the space will not be displayed
     int c, len;
     string msg, res;
