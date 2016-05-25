@@ -35,6 +35,23 @@ string getInp () {
     return str;
 }
 
+string getMorse(string msg, int len) {
+    string res;
+    int i, i1;
+    for(i=0;i<len;i++) {
+        if(msg[i] == spc1) {
+            res += spc2;
+        }else{
+            for(i1=0;i1<len1;i1++) {
+                if(msg[i] == txt[i1]) {
+                    res += (mrse[i1] + " ");
+                }
+            }
+        }
+    }
+    return res;
+}
+
 int main() { // for [2] if 0 has space after, the space will not be displayed
     int c, len;
     string msg, res;
