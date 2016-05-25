@@ -52,6 +52,27 @@ string getMorse(string msg, int len) {
     return res;
 }
 
+string getText(string msg, int len) {
+    string res;
+    int i, i1, i2, i3, cnt=0, tmp;
+    for(i=0;i<len;i++) {
+        for(i1=0;i1<len1;i1++) { // txt length
+            for(i3=0;(msg[i+i3] == spc2[i3]) && (i3<len2);i3++); // checks if word is coming
+            if(i3>=len2) { // word is coming
+                i += i3-1; // get index of starting morse code for next letter
+                res += " "; // add space
+            }
+            tmp = mrse[i1].length(); // get length of each morse code from mrse array
+            for(i2=0;(msg[i+i2] == mrse[i1][i2]) && (i2<tmp);i2++); // mrse length of each string
+            if(((msg[i+i2]==spc1 && i3<len2) || (i+i2)>=len) && i2>=tmp) { // gets txt char
+                res += txt[i1];
+                i += i2;
+            }
+        }
+    }
+    return res;
+}
+
 int main() { // for [2] if 0 has space after, the space will not be displayed
     int c, len;
     string msg, res;
